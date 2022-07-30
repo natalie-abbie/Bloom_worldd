@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import os
+
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -116,6 +117,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'jewelryshop/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') # Automatically Created on Production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Settings for Media
 MEDIA_URL = '/media/'
@@ -131,3 +133,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
